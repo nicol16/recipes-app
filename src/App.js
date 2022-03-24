@@ -89,16 +89,19 @@ const App = () => {
             <div className="recipes">
 
             {/*    Para poder motrar todos los elementos de un arreglo debemos de utilizar la funcion map */}
-            {recipes.map(recipe =>(
+            {recipes.map((recipe, index) =>(
 
-              <Recipe
-                  title={recipe.recipe.label}
-                  calories={recipe.recipe.calories}
-                  image={recipe.recipe.image}
-                  ingredients={recipe.recipe.ingredients}
-                  totalTime = {recipe.recipe.totalTime}
-                  source = {recipe.recipe.source}
-              />
+                <div key={index}>
+
+                    <Recipe
+                        title={recipe.recipe.label}
+                        calories={recipe.recipe.calories}
+                        image={recipe.recipe.image}
+                        ingredients={recipe.recipe.ingredients}
+                        totalTime = {recipe.recipe.totalTime}
+                        source = {recipe.recipe.source}
+                    />
+                </div>
             ))};
         </div>
        </div>
